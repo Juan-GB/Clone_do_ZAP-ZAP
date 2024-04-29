@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone do Zap</title>
+
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body onload="placeMessages()">
+
+    <main>
+        <div>
+            <span>Nome</span>
+            <input type="text" name="nome-user" id="input-nome">
+        </div>
+        <button onclick="placeMessages()">Recarregar</button>
+        <section id="chat">
+            <div id="messages-container"></div>
+
+            <div id="bottom-bar">
+                <textarea name="text-input" id="text-input" placeholder="Digite sua Mensagem..."></textarea>
+
+                <button id="send-button" onclick="sendMessage()">></button>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@13.0.1"></script>
+    <script src="./src/js/script.js"></script>
+</body>
+</html>

@@ -84,7 +84,18 @@ function createElement({destino, element}) {
 async function sendMessage() {
     myName = document.querySelector('#input-nome').value;
     let mensagem = document.querySelector('#text-input').value;
-    let hora = `${new Date().getHours()}:${new Date().getMinutes()}`;
+    
+    let hora = new Date().getHours();
+    if(hora.toString().length == 1) {
+        hora = `0${hora}`;
+    }
+
+    let minutos = new Date().getMinutes();
+    if(minutos.toString().length == 1) {
+        minutos = `0${minutos}`;
+    }
+
+    let horaCompleta = `${hora}:${minutos}}`;
     
     if(myName != '' && myName.length > 1 && mensagem.value != '') {
         try {
@@ -95,7 +106,7 @@ async function sendMessage() {
                 {
                     name: myName,
                     message: mensagem,
-                    hour: hora
+                    hour: horaCompleta
                 }
             );
 
